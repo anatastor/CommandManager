@@ -1,0 +1,7 @@
+
+This software is a manager for commands.
+It allows to manage and execute functions by command.
+
+For use see the src/example.c source file or the documentation.
+
+The software is licensed under the GNU General Public License version 3 or newer.
