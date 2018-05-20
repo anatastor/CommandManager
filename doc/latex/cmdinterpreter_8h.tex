@@ -1,0 +1,211 @@
+\hypertarget{cmdinterpreter_8h}{}\section{cmdinterpreter.\+h File Reference}
+\label{cmdinterpreter_8h}\index{cmdinterpreter.\+h@{cmdinterpreter.\+h}}
+
+
+interpreter for custom command. Might be used in C\+L-\/applications.  
+
+
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unioncmd__arg}{cmd\+\_\+arg}}
+\item 
+struct \mbox{\hyperlink{structcmd}{cmd}}
+\begin{DoxyCompactList}\small\item\em structure containing the details of a command \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcmd__table__entry}{cmd\+\_\+table\+\_\+entry}}
+\begin{DoxyCompactList}\small\item\em an entry in the hashtable used to store the commands \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}}
+\begin{DoxyCompactList}\small\item\em The struct for storing the commands. It works as a hashtable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{cmdinterpreter_8h_a1129d7e0bed7c31561c8664cfe73ad07}\label{cmdinterpreter_8h_a1129d7e0bed7c31561c8664cfe73ad07}} 
+\#define {\bfseries D\+E\+L\+IM}~\char`\"{} \char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$ \mbox{\hyperlink{cmdinterpreter_8h_acbd7fd6722e3fe0748a3fcd4ca07c444}{cmd\+\_\+table\+\_\+create}} (const int size)
+\begin{DoxyCompactList}\small\item\em creates a hashtable and initializes it \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cmdinterpreter_8h_a20f2bf452c6447836db9cd8b63881cae}{cmd\+\_\+table\+\_\+init}} (\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$table, const int size)
+\begin{DoxyCompactList}\small\item\em initializes a hashtable, exits program on failure \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cmdinterpreter_8h_a5a2809995ce3d38b4b37c597c7fdfdd5}{cmd\+\_\+table\+\_\+free}} (\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$$\ast$table)
+\begin{DoxyCompactList}\small\item\em frees a previous created hashtable \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmdinterpreter_8h_acd4f47ab6288795b4e3bae8ea7fafc14}{cmd\+\_\+table\+\_\+hash}} (\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$table, char $\ast$key)
+\begin{DoxyCompactList}\small\item\em hashing function \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmdinterpreter_8h_ae802a2a89ea5a5346ef23f9ec5e7c2e7}{cmd\+\_\+table\+\_\+set}} (\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$table, \mbox{\hyperlink{structcmd}{cmd}} $\ast$command)
+\begin{DoxyCompactList}\small\item\em function to insert a command into the hashtable \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcmd}{cmd}} $\ast$ \mbox{\hyperlink{cmdinterpreter_8h_a231cac9d26a71e59360b3e2e6b368ba1}{cmd\+\_\+table\+\_\+get}} (\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$table, char $\ast$key)
+\begin{DoxyCompactList}\small\item\em function for receiving a command from the hashtable \end{DoxyCompactList}\item 
+\mbox{\hyperlink{unioncmd__arg}{cmd\+\_\+arg}} $\ast$ \mbox{\hyperlink{cmdinterpreter_8h_af6b7f13d871a97800c874c43969863e3}{cmd\+\_\+parser\+\_\+get\+\_\+args}} (const char $\ast$args\+\_\+s)
+\begin{DoxyCompactList}\small\item\em function to get the arguments from the input \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmdinterpreter_8h_ae9b248d46142dd2fcb897987d0ebdab2}{cmd\+\_\+execute}} (\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$table, char $\ast$icmd)
+\begin{DoxyCompactList}\small\item\em executes a command \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{cmdinterpreter_8h_aadee23019bf363e642960d1d284ffa02}\label{cmdinterpreter_8h_aadee23019bf363e642960d1d284ffa02}} 
+struct \mbox{\hyperlink{structcmd__table__entry}{cmd\+\_\+table\+\_\+entry}} {\bfseries cmd\+\_\+table\+\_\+entry}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+interpreter for custom command. Might be used in C\+L-\/applications. 
+
+\begin{DoxyAuthor}{Author}
+Torsten Lehmann 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018-\/05-\/19 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{cmdinterpreter_8h_ae9b248d46142dd2fcb897987d0ebdab2}\label{cmdinterpreter_8h_ae9b248d46142dd2fcb897987d0ebdab2}} 
+\index{cmdinterpreter.\+h@{cmdinterpreter.\+h}!cmd\+\_\+execute@{cmd\+\_\+execute}}
+\index{cmd\+\_\+execute@{cmd\+\_\+execute}!cmdinterpreter.\+h@{cmdinterpreter.\+h}}
+\subsubsection{\texorpdfstring{cmd\+\_\+execute()}{cmd\_execute()}}
+{\footnotesize\ttfamily int cmd\+\_\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$}]{table,  }\item[{char $\ast$}]{icmd }\end{DoxyParamCaption})}
+
+
+
+executes a command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & string containing the command and its parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the command-\/function or -\/1 on failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{cmdinterpreter_8h_af6b7f13d871a97800c874c43969863e3}\label{cmdinterpreter_8h_af6b7f13d871a97800c874c43969863e3}} 
+\index{cmdinterpreter.\+h@{cmdinterpreter.\+h}!cmd\+\_\+parser\+\_\+get\+\_\+args@{cmd\+\_\+parser\+\_\+get\+\_\+args}}
+\index{cmd\+\_\+parser\+\_\+get\+\_\+args@{cmd\+\_\+parser\+\_\+get\+\_\+args}!cmdinterpreter.\+h@{cmdinterpreter.\+h}}
+\subsubsection{\texorpdfstring{cmd\+\_\+parser\+\_\+get\+\_\+args()}{cmd\_parser\_get\_args()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{unioncmd__arg}{cmd\+\_\+arg}}$\ast$ cmd\+\_\+parser\+\_\+get\+\_\+args (\begin{DoxyParamCaption}\item[{const char $\ast$}]{args\+\_\+s }\end{DoxyParamCaption})}
+
+
+
+function to get the arguments from the input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args\+\_\+s} & string containing details about the parameters (i for int, d for double, c for char, s for string, v for void-\/pointer, ...) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to an array of arguments or N\+U\+LL on failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{cmdinterpreter_8h_acbd7fd6722e3fe0748a3fcd4ca07c444}\label{cmdinterpreter_8h_acbd7fd6722e3fe0748a3fcd4ca07c444}} 
+\index{cmdinterpreter.\+h@{cmdinterpreter.\+h}!cmd\+\_\+table\+\_\+create@{cmd\+\_\+table\+\_\+create}}
+\index{cmd\+\_\+table\+\_\+create@{cmd\+\_\+table\+\_\+create}!cmdinterpreter.\+h@{cmdinterpreter.\+h}}
+\subsubsection{\texorpdfstring{cmd\+\_\+table\+\_\+create()}{cmd\_table\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}}$\ast$ cmd\+\_\+table\+\_\+create (\begin{DoxyParamCaption}\item[{const int}]{size }\end{DoxyParamCaption})}
+
+
+
+creates a hashtable and initializes it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & size of the hashtable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the hashtable, N\+U\+LL on failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{cmdinterpreter_8h_a5a2809995ce3d38b4b37c597c7fdfdd5}\label{cmdinterpreter_8h_a5a2809995ce3d38b4b37c597c7fdfdd5}} 
+\index{cmdinterpreter.\+h@{cmdinterpreter.\+h}!cmd\+\_\+table\+\_\+free@{cmd\+\_\+table\+\_\+free}}
+\index{cmd\+\_\+table\+\_\+free@{cmd\+\_\+table\+\_\+free}!cmdinterpreter.\+h@{cmdinterpreter.\+h}}
+\subsubsection{\texorpdfstring{cmd\+\_\+table\+\_\+free()}{cmd\_table\_free()}}
+{\footnotesize\ttfamily void cmd\+\_\+table\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$$\ast$}]{table }\end{DoxyParamCaption})}
+
+
+
+frees a previous created hashtable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & pointer to pointer to the hashtable, the table will be set to N\+U\+LL \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{cmdinterpreter_8h_a231cac9d26a71e59360b3e2e6b368ba1}\label{cmdinterpreter_8h_a231cac9d26a71e59360b3e2e6b368ba1}} 
+\index{cmdinterpreter.\+h@{cmdinterpreter.\+h}!cmd\+\_\+table\+\_\+get@{cmd\+\_\+table\+\_\+get}}
+\index{cmd\+\_\+table\+\_\+get@{cmd\+\_\+table\+\_\+get}!cmdinterpreter.\+h@{cmdinterpreter.\+h}}
+\subsubsection{\texorpdfstring{cmd\+\_\+table\+\_\+get()}{cmd\_table\_get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcmd}{cmd}}$\ast$ cmd\+\_\+table\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$}]{table,  }\item[{char $\ast$}]{key }\end{DoxyParamCaption})}
+
+
+
+function for receiving a command from the hashtable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & pointer to the hashtable \\
+\hline
+{\em key} & key/name of the command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the command on success or N\+U\+LL on failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{cmdinterpreter_8h_acd4f47ab6288795b4e3bae8ea7fafc14}\label{cmdinterpreter_8h_acd4f47ab6288795b4e3bae8ea7fafc14}} 
+\index{cmdinterpreter.\+h@{cmdinterpreter.\+h}!cmd\+\_\+table\+\_\+hash@{cmd\+\_\+table\+\_\+hash}}
+\index{cmd\+\_\+table\+\_\+hash@{cmd\+\_\+table\+\_\+hash}!cmdinterpreter.\+h@{cmdinterpreter.\+h}}
+\subsubsection{\texorpdfstring{cmd\+\_\+table\+\_\+hash()}{cmd\_table\_hash()}}
+{\footnotesize\ttfamily int cmd\+\_\+table\+\_\+hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$}]{table,  }\item[{char $\ast$}]{key }\end{DoxyParamCaption})}
+
+
+
+hashing function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & pointer to the hashtable \\
+\hline
+{\em key} & key to be hashed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hashvalue or -\/1 on failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{cmdinterpreter_8h_a20f2bf452c6447836db9cd8b63881cae}\label{cmdinterpreter_8h_a20f2bf452c6447836db9cd8b63881cae}} 
+\index{cmdinterpreter.\+h@{cmdinterpreter.\+h}!cmd\+\_\+table\+\_\+init@{cmd\+\_\+table\+\_\+init}}
+\index{cmd\+\_\+table\+\_\+init@{cmd\+\_\+table\+\_\+init}!cmdinterpreter.\+h@{cmdinterpreter.\+h}}
+\subsubsection{\texorpdfstring{cmd\+\_\+table\+\_\+init()}{cmd\_table\_init()}}
+{\footnotesize\ttfamily void cmd\+\_\+table\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$}]{table,  }\item[{const int}]{size }\end{DoxyParamCaption})}
+
+
+
+initializes a hashtable, exits program on failure 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the hashtable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{cmdinterpreter_8h_ae802a2a89ea5a5346ef23f9ec5e7c2e7}\label{cmdinterpreter_8h_ae802a2a89ea5a5346ef23f9ec5e7c2e7}} 
+\index{cmdinterpreter.\+h@{cmdinterpreter.\+h}!cmd\+\_\+table\+\_\+set@{cmd\+\_\+table\+\_\+set}}
+\index{cmd\+\_\+table\+\_\+set@{cmd\+\_\+table\+\_\+set}!cmdinterpreter.\+h@{cmdinterpreter.\+h}}
+\subsubsection{\texorpdfstring{cmd\+\_\+table\+\_\+set()}{cmd\_table\_set()}}
+{\footnotesize\ttfamily int cmd\+\_\+table\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcmd__table}{cmd\+\_\+table}} $\ast$}]{table,  }\item[{\mbox{\hyperlink{structcmd}{cmd}} $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+
+function to insert a command into the hashtable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & pointer to the hashtable \\
+\hline
+{\em command} & command to be inserted in the hashtable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on success, 0 on failure 
+\end{DoxyReturn}

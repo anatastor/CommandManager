@@ -1,0 +1,65 @@
+\hypertarget{structcmd}{}\section{cmd Struct Reference}
+\label{structcmd}\index{cmd@{cmd}}
+
+
+structure containing the details of a command  
+
+
+
+
+{\ttfamily \#include $<$cmdinterpreter.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{structcmd_a5216a3541afd7bd7c7723dbf00391050}{dynamic}}
+\item 
+char $\ast$ \mbox{\hyperlink{structcmd_a6ebcb67a0ff2d9a228d6fd6db6bbf1e6}{name}}
+\item 
+int($\ast$ \mbox{\hyperlink{structcmd_aaaab89491cf3cb6e38cb64e3a6395f19}{func}} )(\mbox{\hyperlink{unioncmd__arg}{cmd\+\_\+arg}} $\ast$\mbox{\hyperlink{structcmd_a1ad1940c47b4b02db1483dfb13f70ad4}{args}})
+\item 
+char $\ast$ \mbox{\hyperlink{structcmd_a1ad1940c47b4b02db1483dfb13f70ad4}{args}}
+\item 
+char $\ast$ \mbox{\hyperlink{structcmd_ae204ed15fdf8c24aaab209d091e9bde8}{doc}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+structure containing the details of a command 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structcmd_a1ad1940c47b4b02db1483dfb13f70ad4}\label{structcmd_a1ad1940c47b4b02db1483dfb13f70ad4}} 
+\index{cmd@{cmd}!args@{args}}
+\index{args@{args}!cmd@{cmd}}
+\subsubsection{\texorpdfstring{args}{args}}
+{\footnotesize\ttfamily char$\ast$ cmd\+::args}
+
+list of arguments the command requires \mbox{\Hypertarget{structcmd_ae204ed15fdf8c24aaab209d091e9bde8}\label{structcmd_ae204ed15fdf8c24aaab209d091e9bde8}} 
+\index{cmd@{cmd}!doc@{doc}}
+\index{doc@{doc}!cmd@{cmd}}
+\subsubsection{\texorpdfstring{doc}{doc}}
+{\footnotesize\ttfamily char$\ast$ cmd\+::doc}
+
+string containing the documentation of the command (might be used for a help function) \mbox{\Hypertarget{structcmd_a5216a3541afd7bd7c7723dbf00391050}\label{structcmd_a5216a3541afd7bd7c7723dbf00391050}} 
+\index{cmd@{cmd}!dynamic@{dynamic}}
+\index{dynamic@{dynamic}!cmd@{cmd}}
+\subsubsection{\texorpdfstring{dynamic}{dynamic}}
+{\footnotesize\ttfamily char cmd\+::dynamic}
+
+boolean describing wether the command has been allocated on the stack (1) or on the heap (0) \mbox{\Hypertarget{structcmd_aaaab89491cf3cb6e38cb64e3a6395f19}\label{structcmd_aaaab89491cf3cb6e38cb64e3a6395f19}} 
+\index{cmd@{cmd}!func@{func}}
+\index{func@{func}!cmd@{cmd}}
+\subsubsection{\texorpdfstring{func}{func}}
+{\footnotesize\ttfamily int($\ast$ cmd\+::func) (\mbox{\hyperlink{unioncmd__arg}{cmd\+\_\+arg}} $\ast$\mbox{\hyperlink{structcmd_a1ad1940c47b4b02db1483dfb13f70ad4}{args}})}
+
+function-\/pointer to the function the command should call \mbox{\Hypertarget{structcmd_a6ebcb67a0ff2d9a228d6fd6db6bbf1e6}\label{structcmd_a6ebcb67a0ff2d9a228d6fd6db6bbf1e6}} 
+\index{cmd@{cmd}!name@{name}}
+\index{name@{name}!cmd@{cmd}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char$\ast$ cmd\+::name}
+
+name of the command 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cmdinterpreter_8h}{cmdinterpreter.\+h}}\end{DoxyCompactItemize}

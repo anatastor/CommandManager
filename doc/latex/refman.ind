@@ -1,0 +1,43 @@
+\begin{theindex}
+
+  \item {args}
+    \subitem {cmdinterpreter.\+h}, \hyperpage{8}
+
+  \indexspace
+
+  \item {cmd}, \hyperpage{5}
+  \item {cmd\+\_\+table\+\_\+entry}, \hyperpage{5}
+    \subitem {next}, \hyperpage{6}
+    \subitem {value}, \hyperpage{6}
+  \item {cmdinterpreter.\+h}, \hyperpage{7}
+    \subitem {args}, \hyperpage{8}
+    \subitem {doc}, \hyperpage{8}
+    \subitem {entries}, \hyperpage{8}
+    \subitem {func}, \hyperpage{8}
+
+  \indexspace
+
+  \item {doc}
+    \subitem {cmdinterpreter.\+h}, \hyperpage{8}
+
+  \indexspace
+
+  \item {entries}
+    \subitem {cmdinterpreter.\+h}, \hyperpage{8}
+
+  \indexspace
+
+  \item {func}
+    \subitem {cmdinterpreter.\+h}, \hyperpage{8}
+
+  \indexspace
+
+  \item {next}
+    \subitem {cmd\+\_\+table\+\_\+entry}, \hyperpage{6}
+
+  \indexspace
+
+  \item {value}
+    \subitem {cmd\+\_\+table\+\_\+entry}, \hyperpage{6}
+
+\end{theindex}
