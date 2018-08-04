@@ -9,7 +9,7 @@ int test_func (cmd_arg *args)
 {
     printf("\nThis is a test\n");
     printf("\nmsg: %s\n", args[0].s);
-    printf("\nint: %i\nfloat: %lf\n", args[1].i, args[2].d);
+    printf ("\nmsg2: %s\n", args[1].s);
     return 0;
 }
 
@@ -26,7 +26,7 @@ int
 main (int argc, char **argv)
 {   
     cmd list[] = {
-        {0, "test", test_func, "sid", "help"},
+        {0, "test", test_func, "ss", "help"},
         {0, "baum", baum, "si", "help"}
     };
     // define the commands
